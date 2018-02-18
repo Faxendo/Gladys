@@ -1,6 +1,4 @@
-var createClassifier = require('./brain.create.js');
-
-var intentClassifier = createClassifier();
+var intentClassifier;
 
 module.exports = {
     

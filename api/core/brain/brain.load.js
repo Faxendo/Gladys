@@ -1,6 +1,6 @@
-var serialize = require('serialization');
-var fs = require('fs');
-var shared = require('./brain.shared.js');
+const fs = require('fs');
+const shared = require('./brain.shared.js');
+const natural = require('natural');
 
 /**
  * Load the classifier from json
@@ -23,7 +23,7 @@ function load(path){
            
            try{
                // transform serialized string to classifier
-                var intentClassifierCopy = serialize.fromString(data, __dirname);
+                var intentClassifierCopy = natural.BayesClassifier.restore(JSON.parse(data));
                 
                 // set shared classifier
                 shared.setClassifier(intentClassifierCopy); 

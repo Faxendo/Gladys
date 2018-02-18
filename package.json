@@ -43,6 +43,7 @@
     "jsonwebtoken": "^8.0.0",
     "limdu": "^0.9.3",
     "moment": "^2.18.1",
+    "natural": "^0.5.6",
     "node-schedule": "^1.2.4",
     "rc": "^1.2.1",
     "request": "^2.81.0",

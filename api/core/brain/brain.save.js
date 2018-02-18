@@ -2,7 +2,6 @@ var Promise = require('bluebird');
 var serialize = require('serialization');
 var fs = require('fs');
 var shared = require('./brain.shared.js');
-var createClassifier = require('./brain.create.js');
 
 /**
  * Save the classifier in a .json file to be loaded faster after
@@ -11,7 +10,7 @@ var createClassifier = require('./brain.create.js');
 module.exports = function saveModel(){
     return new Promise(function(resolve, reject){
        var classifier = shared.getClassifier();
-       var intentClassifierString = serialize.toString(classifier, createClassifier);
+       var intentClassifierString = JSON.stringify(classifier);
        fs.writeFile(sails.config.brain.savePath, intentClassifierString, 'utf8', function(err){
            if(err) return reject(err);
            

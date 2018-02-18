@@ -25,7 +25,8 @@ module.exports = function classify(user, message){
 
             var classifier = shared.getClassifier();
 
-            var classifications = classifier.classify(scope.replacedText);
+            var classifications = [classifier.classify(scope.replacedText)];
+            sails.log.debug(classifier.getClassifications(scope.replacedText));
 
             if(classifications.length === 0) {
                 classifications = [`brain${sails.config.brain.separator}no-command-detected`];
