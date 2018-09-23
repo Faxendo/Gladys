@@ -18,11 +18,13 @@ module.exports = {
         },
 
         start: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         },
 
         end: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         },
 
         fullday: {

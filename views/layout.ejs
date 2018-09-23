@@ -9,6 +9,24 @@
     <!-- AUTO INJECTION OF CSS FILES -->
     
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/search.css">
+    <link rel="stylesheet" href="/styles/store.css">
+    <link rel="stylesheet" href="/styles/scenario.css">
+    <link rel="stylesheet" href="/styles/device.css">
+    <link rel="stylesheet" href="/styles/toogle.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/boxs/weather.css">
+    <link rel="stylesheet" href="/styles/dependencies/angular-ui-notification.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/angular-chart.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/slider.css">
+    <link rel="stylesheet" href="/styles/dependencies/leaflet.css">
+    <link rel="stylesheet" href="/styles/dependencies/angular-bootstrap-calendar.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/adminLTE/_all-skins.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/color-picker/color-picker.min.css">
+    <link rel="stylesheet" href="/styles/dependencies/adminLTE/AdminLTE.min.css">
     <!--STYLES END-->
     
     <style>
@@ -20,6 +38,131 @@
     <!-- Your scripts here? -->
     
     <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery.min.js"></script>
+    <script src="/js/dependencies/moment/moment.min.js"></script>
+    <script src="/js/dependencies/moment/locale/en-au.js"></script>
+    <script src="/js/dependencies/moment/locale/en-ca.js"></script>
+    <script src="/js/dependencies/moment/locale/en-gb.js"></script>
+    <script src="/js/dependencies/moment/locale/en-ie.js"></script>
+    <script src="/js/dependencies/moment/locale/en-il.js"></script>
+    <script src="/js/dependencies/moment/locale/en-nz.js"></script>
+    <script src="/js/dependencies/moment/locale/es-do.js"></script>
+    <script src="/js/dependencies/moment/locale/es-us.js"></script>
+    <script src="/js/dependencies/moment/locale/es.js"></script>
+    <script src="/js/dependencies/moment/locale/fr-ca.js"></script>
+    <script src="/js/dependencies/moment/locale/fr-ch.js"></script>
+    <script src="/js/dependencies/moment/locale/fr.js"></script>
+    <script src="/js/dependencies/bootstrap.min.js"></script>
+    <script src="/js/dependencies/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/dependencies/bootstrap-slider.js"></script>
+    <script src="/js/dependencies/angular.min.js"></script>
+    <script src="/js/dependencies/angular-route.min.js"></script>
+    <script src="/js/dependencies/popper.min.js"></script>
+    <script src="/js/dependencies/Chart.min.js"></script>
+    <script src="/js/dependencies/js-yaml.min.js"></script>
+    <script src="/js/dependencies/ng-device-detector.min.js"></script>
+    <script src="/js/dependencies/ng-infinite-scroll.js"></script>
+    <script src="/js/dependencies/angular-moment.min.js"></script>
+    <script src="/js/dependencies/angular-ui-notification.min.js"></script>
+    <script src="/js/dependencies/angular-smooth-scroll.min.js"></script>
+    <script src="/js/dependencies/angular-translate.min.js"></script>
+    <script src="/js/dependencies/slider.js"></script>
+    <script src="/js/dependencies/angular-bootstrap-calendar-tpls.min.js"></script>
+    <script src="/js/dependencies/angular-chart.min.js"></script>
+    <script src="/js/dependencies/color-picker/color-picker.min.js"></script>
+    <script src="/js/dependencies/color-picker/angular-color-picker.js"></script>
+    <script src="/js/app/app.module.js"></script>
+    <script src="/js/app/app.run.js"></script>
+    <script src="/js/app/action/action.service.js"></script>
+    <script src="/js/app/actiontype/actiontype.service.js"></script>
+    <script src="/js/app/alarm/alarm.controller.js"></script>
+    <script src="/js/app/alarm/alarm.service.js"></script>
+    <script src="/js/app/area/area.service.js"></script>
+    <script src="/js/app/box/box.controller.js"></script>
+    <script src="/js/app/box/box.service.js"></script>
+    <script src="/js/app/boxtype/boxtype.service.js"></script>
+    <script src="/js/app/brain/brain.controller.js"></script>
+    <script src="/js/app/brain/brain.service.js"></script>
+    <script src="/js/app/browser/browser.service.js"></script>
+    <script src="/js/app/cache/cacheService.js"></script>
+    <script src="/js/app/calendar/calendar.box.controller.js"></script>
+    <script src="/js/app/calendar/calendar.config.js"></script>
+    <script src="/js/app/calendar/calendar.controller.js"></script>
+    <script src="/js/app/calendar/calendar.service.js"></script>
+    <script src="/js/app/camera/camera.box.controller.js"></script>
+    <script src="/js/app/category/category.service.js"></script>
+    <script src="/js/app/device/chart.box.controller.js"></script>
+    <script src="/js/app/device/device-room.box.controller.js"></script>
+    <script src="/js/app/device/device-value.box.controller.js"></script>
+    <script src="/js/app/device/device.controller.js"></script>
+    <script src="/js/app/device/device.service.js"></script>
+    <script src="/js/app/device/deviceState.controller.js"></script>
+    <script src="/js/app/event/event.box.controller.js"></script>
+    <script src="/js/app/event/event.controller.js"></script>
+    <script src="/js/app/event/event.service.js"></script>
+    <script src="/js/app/eventtype/eventtype.service.js"></script>
+    <script src="/js/app/geocoder/geocoder.service.js"></script>
+    <script src="/js/app/geolocation/geolocation.controller.js"></script>
+    <script src="/js/app/geolocation/geolocation.service.js"></script>
+    <script src="/js/app/global/language.service.js"></script>
+    <script src="/js/app/house/house.controller.js"></script>
+    <script src="/js/app/house/house.service.js"></script>
+    <script src="/js/app/house/housePresence.box.controller.js"></script>
+    <script src="/js/app/installation/installation.controller.js"></script>
+    <script src="/js/app/installation/installation.service.js"></script>
+    <script src="/js/app/launcher/launcher.service.js"></script>
+    <script src="/js/app/machine/machine.controller.js"></script>
+    <script src="/js/app/machine/machine.service.js"></script>
+    <script src="/js/app/maps/maps.controller.js"></script>
+    <script src="/js/app/message/message.controller.js"></script>
+    <script src="/js/app/message/message.service.js"></script>
+    <script src="/js/app/mode/mode.box.controller.js"></script>
+    <script src="/js/app/mode/mode.controller.js"></script>
+    <script src="/js/app/mode/mode.service.js"></script>
+    <script src="/js/app/module/module.configuration.controller.js"></script>
+    <script src="/js/app/module/module.controller.js"></script>
+    <script src="/js/app/module/module.service.js"></script>
+    <script src="/js/app/music/music.controller.js"></script>
+    <script src="/js/app/music/music.service.js"></script>
+    <script src="/js/app/notification/notification.controller.js"></script>
+    <script src="/js/app/notification/notification.service.js"></script>
+    <script src="/js/app/notificationuser/notificationuser.controller.js"></script>
+    <script src="/js/app/notificationuser/notificationuser.service.js"></script>
+    <script src="/js/app/now/now.controller.js"></script>
+    <script src="/js/app/param/param.controller.js"></script>
+    <script src="/js/app/param/param.service.js"></script>
+    <script src="/js/app/paramuser/paramUser.controller.js"></script>
+    <script src="/js/app/paramuser/paramUser.service.js"></script>
+    <script src="/js/app/recognition/recognition.service.js"></script>
+    <script src="/js/app/room/room.service.js"></script>
+    <script src="/js/app/scenario/scenario.controller.js"></script>
+    <script src="/js/app/scenario/scenario.service.js"></script>
+    <script src="/js/app/script/script.controller.js"></script>
+    <script src="/js/app/script/script.service.js"></script>
+    <script src="/js/app/sensor/sensor.controller.js"></script>
+    <script src="/js/app/sensor/sensor.service.js"></script>
+    <script src="/js/app/sentence/sentence.controller.js"></script>
+    <script src="/js/app/sentence/sentence.service.js"></script>
+    <script src="/js/app/sleep/sleep.controller.js"></script>
+    <script src="/js/app/sleep/sleep.service.js"></script>
+    <script src="/js/app/socket/socket.service.js"></script>
+    <script src="/js/app/sound/sound.service.js"></script>
+    <script src="/js/app/state/state.service.js"></script>
+    <script src="/js/app/statetype/statetype.service.js"></script>
+    <script src="/js/app/store/store.service.js"></script>
+    <script src="/js/app/system/system.controller.js"></script>
+    <script src="/js/app/system/system.service.js"></script>
+    <script src="/js/app/token/token.controller.js"></script>
+    <script src="/js/app/token/token.service.js"></script>
+    <script src="/js/app/translate/translate.config.js"></script>
+    <script src="/js/app/update/update.service.js"></script>
+    <script src="/js/app/user/user.controller.js"></script>
+    <script src="/js/app/user/user.service.js"></script>
+    <script src="/js/app/voice/voice.service.js"></script>
+    <script src="/js/app/weather/weather.controller.js"></script>
+    <script src="/js/app/weather/weather.service.js"></script>
+    <script src="/js/dependencies/adminlte.min.js"></script>
     <!--SCRIPTS END-->
     
   </head>

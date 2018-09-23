@@ -16,13 +16,14 @@ module.exports = {
         },
 
         email: {
-            type: 'email',
+            type: 'string',
+            isEmail: true,
             required: true,
             unique: true
         },
 
         birthdate: {
-            type: 'date',
+            type: 'string',
             required: true
         },
 

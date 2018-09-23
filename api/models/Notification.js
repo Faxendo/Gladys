@@ -18,7 +18,8 @@ module.exports = {
         },
 
         priority: {
-            type: 'integer',
+            type: 'number',
+            isInteger: true,
             min: -2,
             max: 2,
             defaultsTo: 0

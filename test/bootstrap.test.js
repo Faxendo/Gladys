@@ -1,7 +1,7 @@
 var Sails = require('sails'),
   sails, fixtures;
 
-var Barrels = require('barrels');
+
 var Promise = require('bluebird');
 
 if (process.env.NODE_ENV === 'development') {
@@ -40,16 +40,12 @@ before(function(done) {
 
 beforeEach(function(done){
     this.timeout(40000);
-    fillDatabaseWithFixtures(function(err){
-        if(err) return done(err);
-        
-        gladys.param.clearCache()
-          .then(function(){
-              return gladys.paramUser.clearCache();
-          })
-          .then(done)
-          .catch(done);
-    });
+
+    fillDatabaseWithFixtures()
+      .then(() => gladys.param.clearCache())
+      .then(() => gladys.paramUser.clearCache())
+      .then(() => done())
+      .catch(done);
 });
 
 after(function(done) {
@@ -60,82 +56,54 @@ after(function(done) {
 });
 
 
-function fillDatabaseWithFixtures(done){
-    
-     // Load fixtures
-    var barrels = new Barrels();
+function fillDatabaseWithFixtures(){
+  
+  var order = [
+      'User',
+      'House',
+      'Mode',
+      'Room',
+      'Token',
+      'Alarm',
+      'Device',
+      'DeviceType',
+      'DeviceState', 
+      'NotificationType',
+      'NotificationUser',
+      'Notification',
+      'EventType',
+      'Launcher',
+      'ActionType',
+      'ActionTypeParam',
+      'Action',
+      'ActionParam',
+      'StateType',
+      'State',
+      'Event',
+      'Script',
+      'Calendar',
+      'CalendarEvent',
+      'Area',
+      'Machine',
+      'BoxType',
+      'Box',
+      'Module',
+      'Sentence',
+      'Param',
+      'ParamUser',
+      'Location',
+      'StateTypeParam',
+      'StateParam',
+      'StateTemplateParam',
+      'Message',
+      'Answer'
+  ];
 
-    // Save original objects in `fixtures` variable
-    fixtures = barrels.data;
-    
-    loadFixtures(barrels)
-        .then(function(){
-            done();
-        })
-        .catch(function(err){
-            sails.log.warn('Error while loading fixtures');
-            done(err);
-        });
-}
-
-function loadFixtures(barrels){
-    var order = [
-       'user',
-       'house',
-       'mode',
-       'room',
-       'token',
-       'alarm',
-       'device',
-       'devicetype',
-       'devicestate', 
-       'notificationtype',
-       'notificationuser',
-       'notification',
-       'eventtype',
-       'launcher',
-       'actiontype',
-       'actiontypeparam',
-       'action',
-       'actionparam',
-       'statetype',
-       'state',
-       'event',
-       'script',
-       'calendar',
-       'calendarevent',
-       'area',
-       'machine',
-       'boxtype',
-       'box',
-       'module',
-       'sentence',
-       'param',
-       'paramuser',
-       'location',
-       'statetypeparam',
-       'stateparam',
-       'statetemplateparam',
-       'message',
-       'answer'
-    ];
-    
-    return Promise.mapSeries(order, function(tableName){
-        return load(tableName, barrels);
-    });
-}
-
-
-// load fixture for one table
-function load(tableName, barrels){
-    
-    return new Promise(function(resolve, reject){
-       barrels.populate([tableName],function(err) {
-            if(err) return reject(err);
-
-            resolve();
-        }); 
-    });
+  return Promise.each(order, function(tableName) {
+    console.log(tableName);
+    return sails.getDatastore().sendNativeQuery('DELETE FROM ' + tableName.toLowerCase())
+      .then(() => global[tableName].createEach(require('./fixtures/' + tableName.toLowerCase() + '.json')))
+  });
 }
 
 function addTestModuleGladys(gladys){

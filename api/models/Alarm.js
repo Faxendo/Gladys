@@ -1,14 +1,6 @@
 
 module.exports = {
 
-    types: {
-        // new time type because time does not exist in sails
-        time: function(time) {
-            var re = /^[0-2]\d:[0-5]\d$/;
-            return (time !== '' && time.match(re));
-        },
-    },
-
     attributes: {
 
         name: {
@@ -18,18 +10,23 @@ module.exports = {
 
         // if define by datetime
         datetime: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         },
 
         // or just by recurring + time
         time: {
             type: 'string',
-            time: true,
+            custom: function(time) {
+              var re = /^[0-2]\d:[0-5]\d$/;
+              return (time !== '' && time.match(re));
+            }
         },
         // going from 0 = Sunday
         // to 6 = Saturday
         dayofweek: {
-            type: 'integer',
+            type: 'number',
+            isInteger: true,
             min: -1,
             max: 6,
             defaultsTo: -1

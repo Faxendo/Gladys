@@ -4,7 +4,8 @@ module.exports = {
     attributes: {
 
         uuid: {
-            type: 'uuid',
+            type: 'string',
+            isUUID: true,
             required: true,
             unique: true
         },

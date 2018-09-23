@@ -8,7 +8,8 @@ module.exports = {
         },
         
         uuid:{
-            type:'uuid',
+            type: 'string',
+            isUUID: true,
             required: true,
             unique: true
         },
@@ -27,7 +28,8 @@ module.exports = {
         },
 
         lastSeen: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         }
 
     }

@@ -15,7 +15,8 @@ module.exports = {
         },
 
         datetime: {
-            type: 'datetime',
+            type: 'string',
+            columnType: 'datetime',
             required: true
         },
 

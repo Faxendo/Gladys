@@ -69,7 +69,8 @@ module.exports = {
         },
 
         lastValueDatetime: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         },
 
         device: {

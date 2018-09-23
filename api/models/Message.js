@@ -5,7 +5,8 @@ module.exports = {
     attributes: {
 
         datetime: {
-            type: 'datetime'
+            type: 'string',
+            columnType: 'datetime'
         },
 
         sender: {
@@ -21,7 +22,8 @@ module.exports = {
         },
 
         conversation: {
-            type: 'uuid'
+            type: 'string',
+            isUUID: true,
         },
 
         service: {

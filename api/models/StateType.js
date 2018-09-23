@@ -5,7 +5,7 @@ module.exports = {
         
         uuid: {
             type:'string',
-            uuid: true,
+            isUUID: true,
             unique: true, 
             required: true
         },

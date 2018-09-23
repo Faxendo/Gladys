@@ -10,7 +10,8 @@ module.exports = {
   attributes: {
       
         datetime: {
-            type: 'datetime',
+            type: 'string',
+            columnType: 'datetime',
             required: true
         },
 

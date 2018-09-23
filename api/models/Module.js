@@ -34,18 +34,21 @@ module.exports = {
       // 1 = installed with success, but waiting for restart
       // 2 = installation failed
       status: {
-          type: 'integer',
+          type: 'number',
+          isInteger: true,
           enum: [0, 1, 2],
           defaultsTo: 1,
       },
 
       lastSeen: {
-        type: 'datetime'
+          type: 'string',
+          columnType: 'datetime'
       },
 
       // The machine where this module is installed
       machine: {
-          type: 'uuid'
+          type: 'string',
+          isUUID: true
       }
 
   }
