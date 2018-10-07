@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <select ng-show="launcherParam.options" ng-model="launcherParam.value" class="form-control" >
-                                                <option ng-repeat="option in launcherParam.options" value="{{option.id}}">{{option.name}}</option>
+                                                <option ng-repeat="option in launcherParam.options" value="{{option.id}}">{{option.deviceName}} : {{option.name || option.type}}</option>
                                             </select>
                                             
                                             <input ng-show="!launcherParam.options" id="launcherparametre" type="text" ng-model="launcherParam.value" class="form-control" placeholder="<%= __('Parametre') %>">
